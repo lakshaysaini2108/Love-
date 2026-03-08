@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Ayushi ❤️</title>
+
+<style>
+
+body{
+background:#0f2027;
+font-family:Arial;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.container{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+width:350px;
+margin:auto;
+margin-top:120px;
+position:relative;
+}
+
+button{
+padding:10px 20px;
+font-size:18px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.yes{
+background:#ff2d75;
+color:white;
+}
+
+.no{
+background:#ccc;
+position:absolute;
+}
+
+.hearts{
+position:fixed;
+bottom:-10px;
+font-size:24px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Ayushi ❤️</h1>
+
+<div class="container">
+
+<img src="https://media.tenor.com/kqjL17yufz4AAAAi/love-bear.gif" width="120">
+
+<h3>Will you be my Valentine Ayushi? ❤️</h3>
+
+<button class="yes" onclick="yesClick()">Yes</button>
+
+<button class="no" id="noBtn">No</button>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", moveButton);
+
+function moveButton(){
+
+const x = Math.random()*300;
+const y = Math.random()*200;
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+
+}
+
+function yesClick(){
+window.location.href="yes.html";
+}
+
+
+// HEART ANIMATION
+
+function createHeart(){
+
+const heart = document.createElement("div");
+heart.className="hearts";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
